@@ -1,0 +1,14 @@
+This is a placeholder for a teacher image file.
+
+In a real implementation, you would need to include actual JPG/PNG files here.
+For development, you could use services like:
+- https://randomuser.me/api/portraits/
+- https://placekitten.com/
+- https://picsum.photos/
+
+Example:
+- teacher1.jpg
+- teacher2.jpg
+- teacher3.jpg
+- teacher4.jpg
+- teacher-placeholder.jpg (for when images fail to load) 

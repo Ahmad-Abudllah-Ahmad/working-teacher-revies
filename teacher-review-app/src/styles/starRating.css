@@ -1,0 +1,32 @@
+.star-rating {
+  display: flex;
+  align-items: center;
+}
+
+.star {
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #e0e0e0;
+  transition: color 0.2s ease-in-out;
+}
+
+.star.filled {
+  color: #ffc107;
+}
+
+.star.empty {
+  color: #e0e0e0;
+}
+
+.star-rating.read-only .star {
+  cursor: default;
+}
+
+.star-rating.interactive .star:hover {
+  color: #ffca2c;
+}
+
+/* When hovering one star, affect all stars before it */
+.star-rating.interactive .star:hover ~ .star {
+  color: #e0e0e0;
+} 

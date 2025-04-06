@@ -1,0 +1,453 @@
+.teacher-management {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.teacher-management-header {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+
+.teacher-management-header h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #000000;
+}
+
+/* Connection status indicators */
+.connection-warning,
+.connection-success,
+.error-message {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.connection-warning {
+  background-color: #fff3cd;
+  border: 1px solid #ffeeba;
+  color: #856404;
+}
+
+.connection-success {
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  color: #155724;
+}
+
+.error-message {
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  color: #721c24;
+  justify-content: space-between;
+}
+
+.connection-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 0.75rem;
+}
+
+.connection-indicator.connected {
+  background-color: #28a745;
+}
+
+.connection-indicator.disconnected {
+  background-color: #ffc107;
+}
+
+.dismiss-button {
+  background: none;
+  border: none;
+  color: #721c24;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+}
+
+/* Search and controls */
+.search-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.search-input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.375rem;
+  font-size: 1rem;
+  max-width: 500px;
+}
+
+.add-button {
+  background-color: #4f46e5;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.add-button:hover {
+  background-color: #4338ca;
+}
+
+/* Teacher cards */
+.teacher-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.teacher-card {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.2s, box-shadow 0.2s;
+  color: #000000;
+}
+
+.teacher-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.teacher-card.local-only {
+  border: 2px dashed #ffc107;
+}
+
+.local-indicator {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background-color: #ffc107;
+  color: #212529;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 999px;
+  font-weight: 500;
+}
+
+.teacher-photo {
+  height: 150px;
+  overflow: hidden;
+}
+
+.teacher-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.teacher-details {
+  padding: 1.25rem;
+}
+
+.teacher-details h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #000000;
+}
+
+.teacher-details p {
+  color: #000000;
+  margin-bottom: 0.25rem;
+}
+
+.teacher-details .field {
+  font-style: italic;
+  color: #000000;
+}
+
+.teacher-details .experience {
+  font-size: 0.875rem;
+  color: #000000;
+}
+
+.teacher-actions {
+  display: flex;
+  margin-top: 1rem;
+  gap: 0.75rem;
+}
+
+.edit-button,
+.delete-button {
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.edit-button {
+  background-color: #e5e7eb;
+  color: #111827;
+}
+
+.edit-button:hover {
+  background-color: #d1d5db;
+}
+
+.delete-button {
+  background-color: #ef4444;
+  color: white;
+}
+
+.delete-button:hover {
+  background-color: #dc2626;
+}
+
+/* Loading state */
+.loading-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-left-color: #4f46e5;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.no-results {
+  text-align: center;
+  padding: 3rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  color: #000000;
+}
+
+/* Modal styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal {
+  background-color: white;
+  border-radius: 0.5rem;
+  width: 90%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 2rem;
+}
+
+/* Drag and drop styles for image upload */
+.image-upload-area {
+  border: 2px dashed #e2e8f0;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.2s;
+  margin-bottom: 1rem;
+}
+
+.image-upload-area.dragging {
+  border-color: #4f46e5;
+  background-color: rgba(79, 70, 229, 0.05);
+}
+
+.image-upload-area p {
+  margin-bottom: 0.5rem;
+  color: #6b7280;
+}
+
+.image-upload-area .upload-button {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #f3f4f6;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  margin-top: 0.5rem;
+  cursor: pointer;
+}
+
+.image-preview {
+  margin-top: 1rem;
+  position: relative;
+}
+
+.image-preview img {
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+  object-fit: contain;
+  border-radius: 0.375rem;
+}
+
+.remove-image {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background-color: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #ef4444;
+}
+
+/* Form styles */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.375rem;
+  font-size: 1rem;
+}
+
+.form-group textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.form-actions button {
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.form-actions button[type="button"] {
+  background-color: white;
+  border: 1px solid #e2e8f0;
+  color: #4b5563;
+}
+
+.form-actions button[type="submit"] {
+  background-color: #4f46e5;
+  border: none;
+  color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .teacher-management {
+    padding: 1rem;
+  }
+  
+  .search-section {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+  
+  .search-input {
+    max-width: none;
+  }
+  
+  .teacher-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Add black text for modal content */
+.bg-white {
+  color: #000000;
+}
+
+.input-field {
+  color: #000000;
+}
+
+/* Add specific styling for the Add New Teacher modal inputs */
+.bg-white .input-field {
+  color: #000000;
+}
+
+/* Override for Add New Teacher modal */
+.fixed .bg-white h3:contains("Add New Teacher") ~ div .input-field,
+.bg-white:has(h3:contains("Add New Teacher")) .input-field {
+  color: white !important;
+}
+
+/* Ensure edit form keeps black text */
+.fixed .bg-white h3:contains("Edit Teacher") ~ div .input-field {
+  color: #000000;
+}
+
+/* Add specific styling for Add/Edit Teacher modals */
+.fixed .bg-white .input-field {
+  color: #000000;
+}
+
+/* Add a custom class in the component for Add New Teacher modal */
+/* For now using a more general selector to make Add New Teacher inputs white */
+/* First modal is typically the Add New Teacher modal */
+.fixed:first-of-type .bg-white .input-field {
+  color: white !important;
+  background-color: #4f46e5; /* Add a background color to make white text visible */
+  border: 1px solid #6366f1;
+}
+
+/* Input styling for Add New Teacher modal */
+.add-teacher-input {
+  color: white !important;
+  background-color: #4f46e5 !important; /* Indigo background to make white text visible */
+  border: 1px solid #6366f1 !important;
+}
+
+.add-teacher-input::placeholder {
+  color: rgba(255, 255, 255, 0.7) !important;
+} 
