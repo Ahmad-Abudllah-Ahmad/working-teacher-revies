@@ -450,4 +450,55 @@
 
 .add-teacher-input::placeholder {
   color: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* Fix for inputs with dark backgrounds */
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="password"],
+textarea {
+  color: #000000;
+}
+
+/* Override for inputs with dark backgrounds */
+input[type="text"][style*="background-color: #4f46e5"],
+input[type="number"][style*="background-color: #4f46e5"],
+input[type="email"][style*="background-color: #4f46e5"],
+input[type="password"][style*="background-color: #4f46e5"],
+textarea[style*="background-color: #4f46e5"],
+input[type="text"][style*="background-color: #000000"],
+input[type="number"][style*="background-color: #000000"],
+input[type="email"][style*="background-color: #000000"],
+input[type="password"][style*="background-color: #000000"],
+textarea[style*="background-color: #000000"] {
+  color: white !important;
+}
+
+/* Fix for any input with class that indicates dark background */
+.dark-bg-input,
+.bg-dark-input,
+.dark-input {
+  color: white !important;
+}
+
+/* Fix for any input with a dark background color */
+input[style*="background-color: rgb(0, 0, 0)"],
+input[style*="background-color: black"],
+input[style*="background-color: #000"],
+input[style*="background-color: #000000"],
+textarea[style*="background-color: rgb(0, 0, 0)"],
+textarea[style*="background-color: black"],
+textarea[style*="background-color: #000"],
+textarea[style*="background-color: #000000"] {
+  color: white !important;
+}
+
+/* Fix for any input with a dark background class */
+.bg-black,
+.bg-gray-900,
+.bg-gray-800,
+.bg-gray-700,
+.dark-bg {
+  color: white !important;
 } 

@@ -226,35 +226,35 @@ const TeacherDetail: React.FC = () => {
                 <div className="rating-bar">
                   <div className="rating-fill" style={{ width: `${categoryAverages.teaching * 20}%` }}></div>
                 </div>
-                <span>{categoryAverages.teaching.toFixed(1)}</span>
+                <span className="text-black">{categoryAverages.teaching.toFixed(1)}</span>
               </div>
               <div className="rating-category">
                 <span>Knowledge:</span>
                 <div className="rating-bar">
                   <div className="rating-fill" style={{ width: `${categoryAverages.knowledge * 20}%` }}></div>
                 </div>
-                <span>{categoryAverages.knowledge.toFixed(1)}</span>
+                <span className="text-black">{categoryAverages.knowledge.toFixed(1)}</span>
               </div>
               <div className="rating-category">
                 <span>Engagement:</span>
                 <div className="rating-bar">
                   <div className="rating-fill" style={{ width: `${categoryAverages.engagement * 20}%` }}></div>
                 </div>
-                <span>{categoryAverages.engagement.toFixed(1)}</span>
+                <span className="text-black">{categoryAverages.engagement.toFixed(1)}</span>
               </div>
               <div className="rating-category">
                 <span>Approachability:</span>
                 <div className="rating-bar">
                   <div className="rating-fill" style={{ width: `${categoryAverages.approachability * 20}%` }}></div>
                 </div>
-                <span>{categoryAverages.approachability.toFixed(1)}</span>
+                <span className="text-black">{categoryAverages.approachability.toFixed(1)}</span>
               </div>
               <div className="rating-category">
                 <span>Responsiveness:</span>
                 <div className="rating-bar">
                   <div className="rating-fill" style={{ width: `${categoryAverages.responsiveness * 20}%` }}></div>
                 </div>
-                <span>{categoryAverages.responsiveness.toFixed(1)}</span>
+                <span className="text-black">{categoryAverages.responsiveness.toFixed(1)}</span>
               </div>
             </div>
           </div>

@@ -325,7 +325,7 @@ const TeacherProfile = () => {
                     <span className="text-gray-700">Overall Grade</span>
                     <div className="flex items-center">
                       <StarRating rating={teacher.metrics.overallGrade} maxRating={5} readOnly />
-                      <span className="ml-2 font-medium">{teacher.metrics.overallGrade.toFixed(1)}</span>
+                      <span className="ml-2 font-medium text-black">{teacher.metrics.overallGrade.toFixed(1)}</span>
                     </div>
                   </div>
                   
@@ -333,7 +333,7 @@ const TeacherProfile = () => {
                     <span className="text-gray-700">Teaching Quality</span>
                     <div className="flex items-center">
                       <StarRating rating={teacher.metrics.teachingQuality} maxRating={5} readOnly />
-                      <span className="ml-2 font-medium">{teacher.metrics.teachingQuality.toFixed(1)}</span>
+                      <span className="ml-2 font-medium text-black">{teacher.metrics.teachingQuality.toFixed(1)}</span>
                     </div>
                   </div>
                   
@@ -341,7 +341,7 @@ const TeacherProfile = () => {
                     <span className="text-gray-700">Attendance & Support</span>
                     <div className="flex items-center">
                       <StarRating rating={teacher.metrics.attendanceSupport} maxRating={5} readOnly />
-                      <span className="ml-2 font-medium">{teacher.metrics.attendanceSupport.toFixed(1)}</span>
+                      <span className="ml-2 font-medium text-black">{teacher.metrics.attendanceSupport.toFixed(1)}</span>
                     </div>
                   </div>
                   
@@ -349,7 +349,7 @@ const TeacherProfile = () => {
                     <span className="text-gray-700">Professional Behavior</span>
                     <div className="flex items-center">
                       <StarRating rating={teacher.metrics.professionalBehavior} maxRating={5} readOnly />
-                      <span className="ml-2 font-medium">{teacher.metrics.professionalBehavior.toFixed(1)}</span>
+                      <span className="ml-2 font-medium text-black">{teacher.metrics.professionalBehavior.toFixed(1)}</span>
                     </div>
                   </div>
                 </div>

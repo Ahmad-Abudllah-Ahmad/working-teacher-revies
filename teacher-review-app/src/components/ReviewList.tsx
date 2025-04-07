@@ -65,7 +65,7 @@ const ReviewList: React.FC<ReviewListProps> = ({ reviews }) => {
                 <span className="text-sm text-gray-600">Overall Grade</span>
                 <div className="flex items-center">
                   <StarRating rating={review.metrics.overallGrade} maxRating={5} readOnly />
-                  <span className="ml-1 text-sm">{review.metrics.overallGrade}</span>
+                  <span className="ml-1 text-sm text-black">{review.metrics.overallGrade}</span>
                 </div>
               </div>
               
@@ -73,7 +73,7 @@ const ReviewList: React.FC<ReviewListProps> = ({ reviews }) => {
                 <span className="text-sm text-gray-600">Teaching Quality</span>
                 <div className="flex items-center">
                   <StarRating rating={review.metrics.teachingQuality} maxRating={5} readOnly />
-                  <span className="ml-1 text-sm">{review.metrics.teachingQuality}</span>
+                  <span className="ml-1 text-sm text-black">{review.metrics.teachingQuality}</span>
                 </div>
               </div>
               
@@ -81,7 +81,7 @@ const ReviewList: React.FC<ReviewListProps> = ({ reviews }) => {
                 <span className="text-sm text-gray-600">Attendance & Support</span>
                 <div className="flex items-center">
                   <StarRating rating={review.metrics.attendanceSupport} maxRating={5} readOnly />
-                  <span className="ml-1 text-sm">{review.metrics.attendanceSupport}</span>
+                  <span className="ml-1 text-sm text-black">{review.metrics.attendanceSupport}</span>
                 </div>
               </div>
               
@@ -89,7 +89,7 @@ const ReviewList: React.FC<ReviewListProps> = ({ reviews }) => {
                 <span className="text-sm text-gray-600">Professional Behavior</span>
                 <div className="flex items-center">
                   <StarRating rating={review.metrics.professionalBehavior} maxRating={5} readOnly />
-                  <span className="ml-1 text-sm">{review.metrics.professionalBehavior}</span>
+                  <span className="ml-1 text-sm text-black">{review.metrics.professionalBehavior}</span>
                 </div>
               </div>
             </div>
