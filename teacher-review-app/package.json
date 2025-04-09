@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "type": "commonjs",
-  "homepage": "https://ahmad-abudllah-ahmad.github.io/teacher-reviewing-anoumously",
+  "homepage": "https://ahmad-abudllah-ahmad.github.io/working-teacher-revies",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",

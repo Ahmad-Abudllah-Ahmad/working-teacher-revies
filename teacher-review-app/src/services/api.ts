@@ -6,7 +6,7 @@ const isGitHubPages = window.location.hostname.includes('github.io');
 
 // Set base URL for API requests - ensure port 5001 is used consistently
 const API_BASE_URL = isGitHubPages 
-  ? '/teacher-reviewing-anoumously/api' // GitHub Pages path (will fallback to mock data)
+  ? '/working-teacher-revies/api' // GitHub Pages path (will fallback to mock data)
   : 'http://localhost:5001/api';
 
 // Storage keys for fallback data
