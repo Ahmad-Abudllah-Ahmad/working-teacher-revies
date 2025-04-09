@@ -22,10 +22,8 @@ const StarRating: React.FC<StarRatingProps> = ({
     onRate(selectedRating);
   };
 
-  const handleHover = (event: React.MouseEvent, starIndex: number) => {
-    if (readOnly || !onRate) return;
-    
-    // This would be for a hover effect, but we're keeping it simple
+  const handleHover = (_event: React.MouseEvent, _starIndex: number) => {
+    // Placeholder for potential future hover functionality
   };
 
   return (
@@ -47,4 +45,4 @@ const StarRating: React.FC<StarRatingProps> = ({
   );
 };
 
-export default StarRating; 
+export default StarRating;

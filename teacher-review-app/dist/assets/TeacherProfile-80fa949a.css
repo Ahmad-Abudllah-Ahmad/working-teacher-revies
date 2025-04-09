@@ -1,0 +1,1 @@
+.star-rating{display:flex;align-items:center}.star{font-size:1.5rem;cursor:pointer;color:#e0e0e0;transition:color .2s ease-in-out}.star.filled{color:#ffc107}.star.empty{color:#e0e0e0}.star-rating.read-only .star{cursor:default}.star-rating.interactive .star:hover{color:#ffca2c}.star-rating.interactive .star:hover~.star{color:#e0e0e0}

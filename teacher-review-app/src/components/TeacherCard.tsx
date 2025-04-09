@@ -13,8 +13,6 @@ interface TeacherCardProps {
 }
 
 const TeacherCard: React.FC<TeacherCardProps> = ({ teacher }) => {
-  const [reviews, setReviews] = useState<Review[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
   const [categoryAverages, setCategoryAverages] = useState({
     overall: 0,
     teaching: 0,
@@ -29,7 +27,6 @@ const TeacherCard: React.FC<TeacherCardProps> = ({ teacher }) => {
         if (response.data && Array.isArray(response.data)) {
           // Only show approved reviews
           const approvedReviews = response.data.filter((review: Review) => review.status === 'approved');
-          setReviews(approvedReviews);
           
           // Calculate category averages
           if (approvedReviews.length > 0) {
@@ -71,8 +68,6 @@ const TeacherCard: React.FC<TeacherCardProps> = ({ teacher }) => {
               r.teacherId === teacher.id && r.status === 'approved'
             );
             if (teacherReviews.length > 0) {
-              setReviews(teacherReviews);
-              
               // Calculate category averages from local data
               const totals = teacherReviews.reduce((acc: {
                 overall: number;
@@ -104,8 +99,6 @@ const TeacherCard: React.FC<TeacherCardProps> = ({ teacher }) => {
             console.error('Error parsing cached reviews:', e);
           }
         }
-      } finally {
-        setLoading(false);
       }
     };
     

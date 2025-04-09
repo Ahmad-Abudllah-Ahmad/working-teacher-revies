@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { api, socket, Teacher, Review, ReviewMetrics } from '../services/api';
+import { api, socket, Teacher, Review } from '../services/api';
 import StarRating from './StarRating';
 import '../styles/teacherDetail.css';
 

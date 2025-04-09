@@ -32,3 +32,27 @@ body {
     @apply w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500;
   }
 }
+
+/* Ensure dark backgrounds have white text */
+.bg-primary-600,
+.bg-gray-800,
+.bg-blue-600,
+.bg-blue-700,
+.bg-primary-700,
+.bg-gray-600,
+.bg-red-600,
+.bg-red-700 {
+  color: white;
+}
+
+/* Make sure links in dark backgrounds are also white */
+.bg-primary-600 a,
+.bg-gray-800 a,
+.bg-blue-600 a,
+.bg-blue-700 a,
+.bg-primary-700 a,
+.bg-gray-600 a,
+.bg-red-600 a,
+.bg-red-700 a {
+  color: white;
+}

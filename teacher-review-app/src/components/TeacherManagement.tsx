@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
 import { teacherApi, socket, setupSocketListeners, Teacher } from '../services/api';
 import '../styles/teacherManagement.css';
 
@@ -597,24 +596,6 @@ const TeacherManagement: React.FC = () => {
     }
   };
 
-  const openEditModal = (teacher: Teacher) => {
-    setCurrentTeacher(teacher);
-    setFormData({
-      name: teacher.name,
-      field: teacher.field,
-      experience: teacher.experience,
-      photo: teacher.photo || '',
-      bio: teacher.bio
-    });
-    setPreviewImage(teacher.photo || null);
-    setShowEditModal(true);
-  };
-
-  const openDeleteModal = (teacher: Teacher) => {
-    setCurrentTeacher(teacher);
-    setShowDeleteModal(true);
-  };
-
   const resetForm = () => {
     setFormData({
       name: '',
@@ -807,7 +788,7 @@ const TeacherManagement: React.FC = () => {
             <form onSubmit={handleAddSubmit}>
               <div className="p-6 space-y-4">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-900 mb-1">
                     Name <span className="text-red-500">*</span>
                   </label>
                   <input
@@ -821,7 +802,7 @@ const TeacherManagement: React.FC = () => {
                   />
                 </div>
                 <div>
-                  <label htmlFor="field" className="block text-sm font-medium text-gray-700 mb-1">
+                  <label htmlFor="field" className="block text-sm font-medium text-gray-900 mb-1">
                     Field <span className="text-red-500">*</span>
                   </label>
                   <input
@@ -835,7 +816,7 @@ const TeacherManagement: React.FC = () => {
                   />
                 </div>
                 <div>
-                  <label htmlFor="experience" className="block text-sm font-medium text-gray-700 mb-1">
+                  <label htmlFor="experience" className="block text-sm font-medium text-gray-900 mb-1">
                     Experience (years) <span className="text-red-500">*</span>
                   </label>
                   <input
@@ -850,7 +831,7 @@ const TeacherManagement: React.FC = () => {
                   />
                 </div>
                 <div>
-                  <label htmlFor="photo" className="block text-sm font-medium text-gray-700 mb-1">
+                  <label htmlFor="photo" className="block text-sm font-medium text-gray-900 mb-1">
                     Photo
                   </label>
                   
@@ -929,7 +910,7 @@ const TeacherManagement: React.FC = () => {
                   </div>
                 </div>
                 <div>
-                  <label htmlFor="bio" className="block text-sm font-medium text-gray-700 mb-1">
+                  <label htmlFor="bio" className="block text-sm font-medium text-gray-900 mb-1">
                     Bio <span className="text-red-500">*</span>
                   </label>
                   <textarea
@@ -982,35 +963,35 @@ const TeacherManagement: React.FC = () => {
             <form onSubmit={handleEditSubmit}>
               <div className="p-6 space-y-4">
                 <div>
-                  <label htmlFor="edit-name" className="block text-sm font-medium text-gray-700 mb-1">
+                  <label htmlFor="edit-name" className="block text-sm font-medium text-gray-900 mb-1">
                     Name <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="text"
                     name="name"
                     id="edit-name"
-                    className="input-field"
+                    className="input-field edit-teacher-input"
                     value={formData.name}
                     onChange={handleInputChange}
                     required
                   />
                 </div>
                 <div>
-                  <label htmlFor="edit-field" className="block text-sm font-medium text-gray-700 mb-1">
+                  <label htmlFor="edit-field" className="block text-sm font-medium text-gray-900 mb-1">
                     Field <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="text"
                     name="field"
                     id="edit-field"
-                    className="input-field"
+                    className="input-field edit-teacher-input"
                     value={formData.field}
                     onChange={handleInputChange}
                     required
                   />
                 </div>
                 <div>
-                  <label htmlFor="edit-experience" className="block text-sm font-medium text-gray-700 mb-1">
+                  <label htmlFor="edit-experience" className="block text-sm font-medium text-gray-900 mb-1">
                     Experience (years) <span className="text-red-500">*</span>
                   </label>
                   <input
@@ -1018,14 +999,14 @@ const TeacherManagement: React.FC = () => {
                     name="experience"
                     id="edit-experience"
                     min="1"
-                    className="input-field"
+                    className="input-field edit-teacher-input"
                     value={formData.experience}
                     onChange={handleInputChange}
                     required
                   />
                 </div>
                 <div>
-                  <label htmlFor="edit-photo" className="block text-sm font-medium text-gray-700 mb-1">
+                  <label htmlFor="edit-photo" className="block text-sm font-medium text-gray-900 mb-1">
                     Photo
                   </label>
                   
@@ -1066,7 +1047,7 @@ const TeacherManagement: React.FC = () => {
                           type="text"
                           name="photo"
                           id="edit-photo"
-                          className="input-field"
+                          className="input-field edit-teacher-input"
                           value={formData.photo}
                           onChange={handleInputChange}
                           placeholder="https://example.com/image.jpg"
@@ -1093,7 +1074,7 @@ const TeacherManagement: React.FC = () => {
                             type="text"
                             name="photo"
                             id="edit-photo-url"
-                            className="input-field"
+                            className="input-field edit-teacher-input"
                             value={formData.photo}
                             onChange={handleInputChange}
                             placeholder="https://example.com/image.jpg"
@@ -1104,14 +1085,14 @@ const TeacherManagement: React.FC = () => {
                   </div>
                 </div>
                 <div>
-                  <label htmlFor="edit-bio" className="block text-sm font-medium text-gray-700 mb-1">
+                  <label htmlFor="edit-bio" className="block text-sm font-medium text-gray-900 mb-1">
                     Bio <span className="text-red-500">*</span>
                   </label>
                   <textarea
                     name="bio"
                     id="edit-bio"
                     rows={3}
-                    className="input-field"
+                    className="input-field edit-teacher-input"
                     value={formData.bio}
                     onChange={handleInputChange}
                     required

@@ -205,6 +205,7 @@
 .delete-button {
   background-color: #ef4444;
   color: white;
+  border: none;
 }
 
 .delete-button:hover {
@@ -417,13 +418,13 @@
 }
 
 /* Override for Add New Teacher modal */
-.fixed .bg-white h3:contains("Add New Teacher") ~ div .input-field,
-.bg-white:has(h3:contains("Add New Teacher")) .input-field {
+.fixed .bg-white h3 ~ div .input-field,
+.bg-white:has(h3) .input-field {
   color: white !important;
 }
 
 /* Ensure edit form keeps black text */
-.fixed .bg-white h3:contains("Edit Teacher") ~ div .input-field {
+.fixed .bg-white h3 ~ div .input-field {
   color: #000000;
 }
 
@@ -449,6 +450,17 @@
 }
 
 .add-teacher-input::placeholder {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* Input styling for Edit Teacher modal */
+.edit-teacher-input {
+  color: white !important;
+  background-color: #4f46e5 !important; /* Indigo background to make white text visible */
+  border: 1px solid #6366f1 !important;
+}
+
+.edit-teacher-input::placeholder {
   color: rgba(255, 255, 255, 0.7) !important;
 }
 
@@ -501,4 +513,28 @@ textarea[style*="background-color: #000000"] {
 .bg-gray-700,
 .dark-bg {
   color: white !important;
+}
+
+/* Style for edit form text */
+.fixed .bg-white div:has(h3) ~ div .text-gray-500,
+.fixed .bg-white div:has(h3) ~ form .text-gray-500 {
+  color: #374151 !important; /* Darker gray for better visibility */
+}
+
+/* Make sure all labels and helper text in edit form have good contrast */
+.fixed .bg-white div:has(h3) ~ form p,
+.fixed .bg-white div:has(h3) ~ form span {
+  color: #374151 !important;
+}
+
+/* Add more specific selector for the edit teacher form */
+#edit-name,
+#edit-field,
+#edit-experience,
+#edit-photo,
+#edit-photo-url,
+#edit-bio {
+  color: white !important;
+  background-color: #4f46e5 !important;
+  border: 1px solid #6366f1 !important;
 } 
